@@ -1,0 +1,21 @@
+header{
+    background-image: url("./../../../assets/header.png");
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}
+
+.head1 {
+    font-size:40px;
+    color:#ffff;
+    font-weight:bold;
+  }
+  .head2 {
+    font-size:17px;
+    margin-left:10px;
+    margin-bottom:15px;
+    color:#f0f016;
+  }
+  
+
