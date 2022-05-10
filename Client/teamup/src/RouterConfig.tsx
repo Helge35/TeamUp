@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import HomePage from "./pages/Home/HomePage";
-import Member from "./pages/Member/Member";
+import Member from "./pages/Member";
 
 const RouterConfig = () => {
   return (

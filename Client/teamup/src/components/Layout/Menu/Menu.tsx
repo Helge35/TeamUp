@@ -1,5 +1,5 @@
 import "./Menu.css";
-import { Link, Outlet, MemoryRouter as Router } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Menu = () => {
   return (

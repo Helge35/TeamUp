@@ -1,9 +1,13 @@
 import React from "react";
 import "./Dashboard.style.css";
-import { Grid, Avatar, AvatarGroup } from "@mui/material";
-import { Link } from "react-router-dom";
-import Popup from "../../utils/Popup";
-import MemberDetails from "../../components/MemberDetails/MemberDetails";
+
+import { Container, Row, Col, Card, Badge } from "react-bootstrap";
+
+import { LevelEnum } from "../../models/LevelEnum";
+import { Member } from "../../models/Member";
+import { Project } from "../../models/Project";
+import { OfficeStatusEnum } from "../../models/OfficeStatusEnum";
+import MemberPreviewComponent from "../../components/MemberPreview/MemberPreview.component";
 
 
 const DashboardView = () => {
@@ -18,42 +22,90 @@ const DashboardView = () => {
     setOpen(false);
   };
 
+
+  const MembersList = [
+    {
+      id: 1,
+      firstName: "Anja",
+      lastName: "Hobbs",
+      email: "anjahobbs@mail.com",
+      officeStatus: OfficeStatusEnum.Ready,
+      photoUrl: "/images/1.jpg",
+      phone: "054-8989-989",
+      startAt: new Date(),
+      projects: [],
+      commonLevel: LevelEnum.Middle,
+      skillLevels: [],
+    },
+    {
+      id: 2,
+      firstName: "Ivor",
+      lastName: "Whittaker",
+      email: "Ivor Whittaker@mail.com",
+      officeStatus: OfficeStatusEnum.Ready,
+      photoUrl: "images/2.jpg",
+      phone: "054-8989-989",
+      startAt: new Date(),
+      projects:[{ id: 1, name: "Project 1"},{ id: 2, name: "Project 2"},{ id: 3, name: "Project 3"}],
+      commonLevel: LevelEnum.Senior,
+      skillLevels: [],
+    },
+    {
+      id: 3,
+      firstName: "Jarrod",
+      lastName: "Gallegos",
+      email: "anjahobbs@mail.com",
+      officeStatus: OfficeStatusEnum.Sick,
+      photoUrl: "/images/3.jpg",
+      phone: "054-8989-989",
+      startAt: new Date(),
+      projects: [],
+      commonLevel: LevelEnum.Middle,
+      skillLevels: [],
+    },
+    {
+      id: 4,
+      firstName: "Marta",
+      lastName: "Oneal",
+      email: "anjahobbs@mail.com",
+      officeStatus: OfficeStatusEnum.Out,
+      photoUrl: "/images/4.jpg",
+      phone: "054-8989-989",
+      startAt: new Date(),
+      projects: [],
+      commonLevel: LevelEnum.Middle,
+      skillLevels: [],
+    },
+    {
+      id: 5,
+      firstName: "No",
+      lastName: "One",
+      email: "anjahobbs@mail.com",
+      officeStatus: OfficeStatusEnum.Ready,
+      photoUrl: "",
+      phone: "054-8989-989",
+      startAt: new Date(),
+      projects: [],
+      commonLevel: LevelEnum.Middle,
+      skillLevels: [],
+    }
+  ].map((mem) => <MemberPreviewComponent key={mem.id} member={mem} />
+  );
+
+
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={8}>
-        <div>
-          
-           {/* <Button
-              component={Link}
-              to="/home"
-              variant="contained"
-              color="primary"
-            >
-              Add New Member
-            </Button>*/}
-
-
-          <Popup title="Add New Member">
-            <MemberDetails />
-          </Popup>
-            
-         
-          <AvatarGroup>
-            
-              <Avatar className="avatar" component={Link} to="/member/1"  alt="Remy Sharp" src="/static/images/avatar/1.jpg">
-                RS
-              </Avatar>
-            <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-            <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-            <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
-            <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
-          </AvatarGroup>
-        </div>
-      </Grid>
-      <Grid item xs={4} style={{ backgroundColor: "navajowhite" }}>
-        Notifications
-      </Grid>
-    </Grid>
+    <Container fluid="md">
+      <Row>
+        <Col>
+          <Card>
+            <ul>
+              {MembersList}
+            </ul>
+          </Card>
+        </Col>
+        <Col style={{ backgroundColor: 'navajowhite' }}>1 of 1</Col>
+      </Row>
+    </Container>
   );
 };
 

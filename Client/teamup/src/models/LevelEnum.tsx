@@ -1,6 +1,6 @@
 export enum LevelEnum{
-    None,
-    Junior,
-    Middle,
-    Senior,
+    None = '',
+    Junior = 'Junior',
+    Middle = 'Middle',
+    Senior = "Senior",
 }

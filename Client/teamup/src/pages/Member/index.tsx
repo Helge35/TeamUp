@@ -1,0 +1,1 @@
+export {MemberView as default} from "./Member.view";
