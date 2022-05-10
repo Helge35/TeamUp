@@ -1,13 +1,13 @@
 import { Project } from "./Project";
 import { SkillLevel } from "./SkillLevel";
 
-export interface Member{
-    id: number;
-    firstName: string;
-    lastName:string;
-    email: string;
-    age:number;
-    startAt: Date;
-    projects: Project[];
-    skillLevels: SkillLevel[];
+export class Member{
+    id?: number;
+    firstName: string ="";
+    lastName:string="";
+    email: string="";
+    phone:string="";
+    startAt: Date= new Date();
+    projects: Project[] =[];
+    skillLevels: SkillLevel[]=[];
 }

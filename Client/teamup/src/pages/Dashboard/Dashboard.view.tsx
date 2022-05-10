@@ -1,12 +1,12 @@
 import React from "react";
-import "./DashboardPage.css";
-import { Grid, Avatar, AvatarGroup, Button } from "@mui/material";
+import "./Dashboard.style.css";
+import { Grid, Avatar, AvatarGroup } from "@mui/material";
 import { Link } from "react-router-dom";
-import FormDialog from "./../../utils/Popup";
+import Popup from "../../utils/Popup";
 import MemberDetails from "../../components/MemberDetails/MemberDetails";
 
 
-const DashboardPage = () => {
+const DashboardView = () => {
 
   const [open, setOpen] = React.useState(false);
 
@@ -33,9 +33,10 @@ const DashboardPage = () => {
             </Button>*/}
 
 
-          <FormDialog title={"Add New Member"} />
+          <Popup title="Add New Member">
+            <MemberDetails />
+          </Popup>
             
-        
          
           <AvatarGroup>
             
@@ -56,4 +57,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default DashboardView;
