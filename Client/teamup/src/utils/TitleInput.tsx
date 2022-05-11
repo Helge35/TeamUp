@@ -12,7 +12,6 @@ const TitleInput = ({ title, children }: Props) => {
             <Title>{title}</Title>
             <Input>{children}</Input>
         </Div>
-
     );
 };
 
@@ -24,22 +23,20 @@ const Div = styled.div`
 
 const Title = styled.div`
     margin-top: 6px;
-    font-size: 20px;
+    font-size: 14px;
     color: #1e1f22;
     text-align: left;
-    font-weight: 400;
     float :left;
-    width:100px;
 `;
 
 const Input = styled.div`
     float :left;
-    margin-left: 10px;
+    margin-left: 5px;
 
     input{
         color: black;
-        font-size: 20px;
-        width: 250px;
+        font-size: 16px;
+        width: 180px;
         border: 3px 0.5px #aaa7a7;
         background-color: #ebeeee;
     } 

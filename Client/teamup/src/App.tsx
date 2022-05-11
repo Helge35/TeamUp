@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./components/Layout/Footer/Footer";
 import Header from "./components/Layout/Header/Header";
 import RouterConfig from "./RouterConfig";

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import { Member } from "../../models/Member";
+import Avatar from "../Avatar/Avatar";
 
 interface MemberPreviewProps {
     member: Member;
@@ -22,7 +23,7 @@ const MemberPreviewComponent = ({ member }: MemberPreviewProps) => {
         <MemberPreviewItem key={member.id}>
             <div className="memberContainer" onClick={OpenMemberDetails}>
 
-                {member.photoUrl ? <img className="alvatrImg" src={member.photoUrl} /> : <img className="alvatrImg" src='/images/anonimus.jpg' />}
+                <Avatar  photoUrl={member.photoUrl} /> 
                 <div>
                     <h3>{member.firstName} {member.lastName}     <small>({member.officeStatus})</small></h3>
                     <Badge className="badge" pill bg="info">{member.commonLevel}</Badge>
@@ -45,13 +46,6 @@ const MemberPreviewItem = styled.li`
     :hover {
         background-color: lightgray;
         cursor: pointer
-    }
-
-    .alvatrImg {
-        border-radius: 50%;
-        height: 100px;
-        width: 80px;
-        float: left;
     }
     
     .memberContainer {

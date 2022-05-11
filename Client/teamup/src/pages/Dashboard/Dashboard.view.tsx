@@ -1,11 +1,7 @@
 import React from "react";
 import "./Dashboard.style.css";
 
-import { Container, Row, Col, Card, Badge } from "react-bootstrap";
-
 import { LevelEnum } from "../../models/LevelEnum";
-import { Member } from "../../models/Member";
-import { Project } from "../../models/Project";
 import { OfficeStatusEnum } from "../../models/OfficeStatusEnum";
 import MemberPreviewComponent from "../../components/MemberPreview/MemberPreview.component";
 
@@ -46,7 +42,7 @@ const DashboardView = () => {
       photoUrl: "images/2.jpg",
       phone: "054-8989-989",
       startAt: new Date(),
-      projects:[{ id: 1, name: "Project 1"},{ id: 2, name: "Project 2"},{ id: 3, name: "Project 3"}],
+      projects: [{ id: 1, name: "Project 1" }, { id: 2, name: "Project 2" }, { id: 3, name: "Project 3" }],
       commonLevel: LevelEnum.Senior,
       skillLevels: [],
     },
@@ -88,25 +84,26 @@ const DashboardView = () => {
       projects: [],
       commonLevel: LevelEnum.Middle,
       skillLevels: [],
-    }
+    },
+
   ].map((mem) => <MemberPreviewComponent key={mem.id} member={mem} />
   );
 
 
   return (
-    <Container fluid="md">
-      <Row>
-        <Col>
-          <Card>
-            <ul>
-              {MembersList}
-            </ul>
-          </Card>
-        </Col>
-        <Col style={{ backgroundColor: 'navajowhite' }}>1 of 1</Col>
-      </Row>
-    </Container>
-  );
+
+    <div className="grid">
+      <div className="row">
+        <div className="col-6">          
+        <div className="card members" >
+          <ul>
+            {MembersList}
+          </ul>
+        </div></div>
+        <div style={{ backgroundColor: 'navajowhite' }} className="col-6">.g-col-4</div>
+      </div>
+    </div>
+  )
 };
 
 export default DashboardView;

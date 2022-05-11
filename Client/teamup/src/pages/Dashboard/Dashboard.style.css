@@ -1,0 +1,9 @@
+.members {
+    overflow-x : auto;
+    overflow-x: hidden;
+    height: 50rem;
+
+}
+.grid{
+    overflow-x: hidden;
+}
